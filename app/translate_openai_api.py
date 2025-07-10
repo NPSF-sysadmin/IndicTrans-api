@@ -46,7 +46,7 @@ async def chat_completion(request: Request):
             return JSONResponse({"error": "No user message provided"}, status_code=400)
 
         text = last_user_msg[-1]["content"]
-        translated_text, src_lang = await safe_translate(text, "eng_Latn", "hin_Deva")
+        translated_text, src_lang = await safe_translate(text, "eng_Latn", "mar_Deva")
 
         # Streaming
         if req_json.get("stream", False):
